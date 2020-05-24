@@ -5,9 +5,10 @@ import { CardModule } from './module/card/card.module';
 import { AuthModule } from './module/auth/auth.module';
 import { DeckModule } from './module/deck/deck.module';
 import { UserModule } from './module/user/user.module';
-import { MongooseModule } from '@nestjs/mongoose';
+import { AppController } from './app.controller';
 
 @Module({
+  controllers: [AppController],
   imports: [
     AuthModule,
     DatabaseModule,
@@ -18,6 +19,6 @@ import { MongooseModule } from '@nestjs/mongoose';
       autoSchemaFile: true,
       context: ({ req }) => ({ req }),
     }),
-  ]
+  ],
 })
 export class AppModule {}
