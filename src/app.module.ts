@@ -6,9 +6,11 @@ import { AuthModule } from './module/auth/auth.module';
 import { DeckModule } from './module/deck/deck.module';
 import { UserModule } from './module/user/user.module';
 import { AppController } from './app.controller';
+import { AppService } from './app.service';
 
 @Module({
   controllers: [AppController],
+  providers: [AppService],
   imports: [
     AuthModule,
     DatabaseModule,
