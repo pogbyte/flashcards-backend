@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+  - "13"
+
+cache: npm
+
+before_install:
+  - npm install
+
+# TODO: Add run tests command
+script:
+  - npm run-script build
