@@ -8,4 +8,5 @@ export default class DeckInput {
 
   @Field({ nullable: true })
   readonly name: string;
+
 }
