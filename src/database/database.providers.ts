@@ -4,6 +4,7 @@ export const databaseProviders = [
   {
     provide: 'DATABASE_CONNECTION',
     useFactory: async () => await createConnection({
+      name: 'db-default',
       type: 'mongodb',
       url: process.env.MONGODB_URL,
       cache: false,

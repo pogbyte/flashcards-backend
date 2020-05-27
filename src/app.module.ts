@@ -5,13 +5,12 @@ import { CardModule } from './module/card/card.module';
 import { AuthModule } from './module/auth/auth.module';
 import { DeckModule } from './module/deck/deck.module';
 import { UserModule } from './module/user/user.module';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { TerminusModule } from '@nestjs/terminus';
+import { HealthController } from './health/health.controller';
 
 @Module({
-  controllers: [AppController],
-  providers: [AppService],
   imports: [
+    TerminusModule,
     AuthModule,
     DatabaseModule,
     CardModule,
@@ -22,5 +21,6 @@ import { AppService } from './app.service';
       context: ({ req }) => ({ req }),
     }),
   ],
+  controllers: [HealthController],
 })
 export class AppModule {}
