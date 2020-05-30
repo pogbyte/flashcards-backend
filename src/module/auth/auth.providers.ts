@@ -23,7 +23,7 @@ export class AuthProviders {
     if (await this.validateUser(user.username, user.password)) {
       const payload = { username: user.username, password: user.password };
       return {
-        Authorization: `Bearer ${this.jwtService.sign(payload)}`,
+        Authorization: this.jwtService.sign(payload),
       };
     } else {
       throw new UserNotExist()

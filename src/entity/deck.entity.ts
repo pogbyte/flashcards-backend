@@ -18,6 +18,7 @@ export default class Deck extends BaseEntity {
   @Column({ length: 500 })
   name: string;
 
+  @Field()
   @ManyToOne(type => User, user => user.decks)
   user: User;
 

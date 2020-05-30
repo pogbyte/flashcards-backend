@@ -21,6 +21,7 @@ export default class Card extends BaseEntity {
   @Column({ length: 500 })
   text_back: string;
 
+  @Field()
   @ManyToOne(type => Deck, deck => deck.cards)
   deck: Deck;
 
